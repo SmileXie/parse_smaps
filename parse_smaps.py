@@ -9,13 +9,13 @@ import getopt
 from collections import defaultdict, OrderedDict
 from subprocess import check_output
 
+
 def usage():
     print("""
 usage: parse_smaps.py [-p process_name] [-t memory_type] [-h] [smaps_filename]
 
-example: parse_smaps.py /proc/12424/smaps
-         parse_smaps.py -p smbd
-         parse_smaps.py -p smbd -t Pss
+example: sudo python3 parse_smaps.py /proc/12424/smaps
+         sudo python3 parse_smaps.py -p smbd
 """)
 
 

@@ -16,7 +16,7 @@ This tool simply parses 4 values and sums up the memory used from the same file:
 - Use with a process name (automatically get the first pid by `pidof`)
 
 ```
-$> sudo python parse_smaps.py -p sshd
+$> sudo python3 parse_smaps.py -p sshd
 There are multiple pids:
 [0]    83568: sshd: vagrant@pts/6
 [1]    83566: sshd: vagrant [priv]
@@ -50,7 +50,7 @@ Choose which one process you want (default=0):
 - Use with a specified smaps file
 
 ```
-$> sudo python parse_smaps.py /proc/83581/smaps
+$> sudo python3 parse_smaps.py /proc/83581/smaps
 ======================================================================
  Private +  Private +   Shared +   Shared
    Clean +    Dirty +    Clean +    Dirty =    Total : library
