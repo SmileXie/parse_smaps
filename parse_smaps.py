@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 #
 # Author: Craig Chi <craig10624@gmail.com>
-#
+#         Spencer Xie <spencer.xie.0@gmail.com>
+# 
 
 import sys
 import os
@@ -15,15 +16,17 @@ def usage():
 usage: parse_smaps.py [-p process_name] [-t memory_type] [-h] [smaps_filename]
 
 example: sudo python3 parse_smaps.py /proc/12424/smaps
+         sudo python3 parse_smaps.py -t Pss /proc/12424/smaps
          sudo python3 parse_smaps.py -p smbd
 """)
 
 
 def print_header(mem_idx):
     print('=' * 70)
+    num = len(mem_idx)
     for title in zip(*map(lambda x: x.split('_'), mem_idx.keys()),
                      ('', '=    Total : library')):
-        print('{:>8} + {:>8} + {:>8} + {:>8} {}'.format(*title,))
+        print(((num - 1) * '{:>8} + ' + '{:>8} ' + '{}').format(*title,))
     print('=' * 70)
 
 
